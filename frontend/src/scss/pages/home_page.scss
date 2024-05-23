@@ -1,0 +1,8 @@
+@import '../scss-defaults/variables.scss';
+@import '../scss-defaults/mixins.scss';
+
+.home-page-starter {
+    height: 80vh;
+    background-color: $primary-color-lighter;
+    @include flex-center;
+}

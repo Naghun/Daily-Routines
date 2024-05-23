@@ -1,0 +1,66 @@
+@import '../scss-defaults/variables.scss';
+@import '../scss-defaults/mixins.scss';
+
+.footer-starter {
+    min-height: 10vh;
+    background-color: $secondary-color-lighter;
+    .footer-row {
+        .footer-container {
+            height: 10vh;
+            .home-link {
+                color: $font-secondary;
+                font-weight: 500;
+                font-family: $font-slab;
+                text-decoration: none;
+                font-size: 24px;
+                padding: 5px;
+                @include flex-start;
+                cursor: pointer;
+            }
+            .home-link.active {
+                color: $beige-color;
+            }
+            .home-link:hover {
+                color: $font-secondary-hover;
+                font-weight: 700;
+            }
+            .design-container {
+                @include flex-center-column;
+                .design, .rights {
+                    color: $font-secondary;
+                    font-size: 14px;
+                    font-family: $font-slab;
+                    span {
+                        padding-left: 3px;
+                    }
+                }
+            }
+            .footer-list {
+                @include flex-center;
+                padding: 0;
+                margin: 0;
+                list-style: none;
+                .list-item {
+                    @include flex-center;
+                    text-align: center;
+                    a {
+                        text-decoration: none;
+                        color: $font-secondary;
+                        font-family: $font-slab;
+                        font-weight: 400;
+                        cursor: pointer;
+                        transition: 0.3s ease;
+                    }
+                    a:hover {
+                        color: $font-secondary-hover;
+                        font-weight: 700;
+                    }
+                    a.active {
+                        color: $beige-color;
+                        font-weight: 700;
+                    }
+                }
+            }
+        }
+    }
+}

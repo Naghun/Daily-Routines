@@ -1,0 +1,33 @@
+@import './fonts.scss';
+
+$primary-color: #2d728f;
+$primary-color-lighter: #3b8ea5;
+$primary-color-transparent-lot: rgba(45, 114, 143, 0.3);
+$primary-color-transparent-lit: rgba(45, 114, 143, 0.7);
+$secondary-color: #8b575c;
+$secondary-color-lighter: #c98986;
+$secondary-color-transparent-lot: rgba(139, 87, 92, 0.3);
+$secondary-color-transparent-lit: rgba(139, 87, 92, 0.7);
+$beige-color: #f5ee9e;
+$beige-color-transparent: rgba(245, 238, 158, 0.7);
+
+$font-primary: #000000;
+$font-secondary: #ffffff;
+$font-primary-hover: rgb(90, 90, 90);
+$font-secondary-hover: rgb(192, 192, 192);
+
+$font-serif: "Roboto Serif", serif;
+$font-slab: "Roboto Slab", serif;
+$font-normal: "Roboto", sans-serif;
+
+$font-x-big: 32px;
+$font-big: 24px;
+$font-medium: 18px;
+$font-small: 14px;
+$font-x-small: 10px;
+
+$x-large: 1400px;
+$large:1200px;
+$medium: 1000px;
+$small: 770px;
+$x-small: 480px;

@@ -1,0 +1,158 @@
+@import '../scss-defaults/variables.scss';
+@import '../scss-defaults/mixins.scss';
+
+.tasks-page-starter {
+    min-height: 80vh;
+    background-color: $primary-color-lighter;
+    .tasks-row {
+        .tasks-starter {
+            min-height: 70vh;
+            @include flex-start-column;
+            margin-top: 50px;
+            .tasks-container {
+                position: relative;
+                min-height: 70vh;
+                background-color: $primary-color-transparent-lit;
+                border: none;
+                border-radius: 20px;
+                transition: 0.3s all;
+                .tasks-header {
+                    font-family: $font-slab;
+                    font-weight: 500;
+                    font-size: $font-big;
+                    color: $font-secondary;
+                    padding: 30px;
+                    @include flex-center;
+                }
+                .tasks-details {
+                    font-family: $font-serif;
+                    font-size: $font-medium;
+                    color: $font-secondary;
+                    padding: 10px;
+                    @include flex-center-column;
+                    list-style: none;
+                    gap: 10px;
+                    .task-item {
+                        padding: 10px;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        border: none;
+                        border-radius: 20px;
+                        background-color: $secondary-color-transparent-lot;
+                        .name {
+                            text-decoration: none;
+                            color: $font-secondary;
+                            transition: 0.5s ease;
+                        }
+                        .name:hover {
+                            color: $beige-color;
+                            font-weight: 700;
+                        }
+                        .edit, .delete {
+                            @include flex-end;
+                            transition: 0.5s ease;
+                        }
+                        .edit:hover, .delete:hover {
+                            color: $font-secondary-hover;
+                            font-weight: 700;
+                        }
+                    }
+                }
+                .tasks-create {
+                    @include flex-center;
+                    margin: 30px 0px;
+                    .create-button {
+                        font-family: $font-serif;
+                        font-size: $font-medium;
+                        color: $font-secondary;
+                        font-weight: 500;
+                        background-color: $secondary-color;
+                        border: none;
+                        border-radius: 20px;
+                        transition: 0.3s ease;
+                    }
+                    .create-button:hover {
+                        font-weight: 700;
+                        color: $font-secondary-hover;
+                    }
+                }
+            }
+            .tasks-container.overlayed {
+                backdrop-filter: blur(10px);
+                pointer-events: none;
+            }
+            .task-details {
+                height: 40%;
+                width: 50%;
+                position: absolute;
+                top: 20%;
+                left: 50%;
+                transform: translateX(-50%);
+                background-color: $beige-color;
+                padding: 30px;
+                border: none;
+                border-radius: 10px;
+                transition: 0.5s all ease;
+                @include flex-center-column;
+                opacity: 0;
+                .task-header {
+                    margin: 20px 0px;
+                    @include flex-center;
+                    color: $font-primary;
+                    font-weight: 500;
+                    font-family: $font-slab;
+                }
+                .description {
+                    margin: 10px 0px;
+                    font-family: $font-serif;
+                    font-size: $font-medium;
+                }
+                .close-task-button {
+                    border: none;
+                    border-radius: 20px;
+                    padding: 10px;
+                    margin: 20px 0px;
+                    background-color: $primary-color;
+                    color: $font-secondary;
+                    font-family: $font-slab;
+                    font-size: $font-medium;
+                }
+                .close-task-button:hover {
+                    font-weight: 500;
+                    color: $font-secondary-hover;
+                }
+            }
+            
+            .task-details.show-task {
+                animation: fadeInDown 0.5s ease forwards;
+                visibility: visible;
+            }
+            .task-details.hide-task {
+                animation: fadeOutUp 0.5s ease forwards;
+            }
+        }
+    }
+}
+@keyframes fadeInDown {
+    0% {
+        top: 20%;
+        opacity: 0;
+    }
+    100% {
+        top: 50%;
+        transform: translate(-50%, -50%);
+        opacity: 1;
+    }
+}
+@keyframes fadeOutUp {
+    0% {
+        top: 50%;
+        transform: translate(-50%, -50%);
+        opacity: 1;
+    }
+    100% {
+        top: 60%;
+        opacity: 0;
+    }
+}

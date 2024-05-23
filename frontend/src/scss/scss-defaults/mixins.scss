@@ -1,0 +1,62 @@
+@import './variables.scss';
+
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+@mixin flex-center-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+@mixin flex-start-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+}
+@mixin flex-start {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+@mixin flex-end-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+}
+@mixin flex-end {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+@mixin mobile {
+    @media (max-width: $x-small) {
+        @content;
+    }
+}
+@mixin mobile_l {
+    @media (max-width: $small) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media (max-width: $medium) {
+        @content;
+    }
+}
+@mixin laptop {
+    @media (max-width: $large) {
+        @content;
+    }
+}
+@mixin computer {
+    @media (max-width: $x-large) {
+        @content;
+    }
+}

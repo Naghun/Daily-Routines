@@ -1,0 +1,60 @@
+@import '../scss-defaults/variables.scss';
+@import '../scss-defaults/mixins.scss';
+
+.nav-starter {
+    height: 10vh;
+    background-color: $secondary-color-lighter;
+    font-family: $font-slab;
+    color: $font-primary;
+    .navigation-row {
+        .navigation-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            .navbar-header {
+                height: 8vh;
+                display: flex;
+                justify-content: start;
+                align-items: center;
+                font-size: 24px;
+                font-weight: 500;
+                color: $font-secondary;
+                text-decoration: none;
+                padding-left: 20px;
+                margin: 0%;
+            }
+            .navbar-header.active {
+                color: $beige-color ;
+            }
+            .navbar-collapse {
+                display: flex;
+                justify-content: end;
+                .navbar-nav {
+                    display: flex;
+                    justify-content: end;
+                    align-items: center;
+                    list-style: none;
+                    .nav-item {
+                        @include flex-center;
+                        font-size: 18px;
+                        font-weight: 400;
+                        a {
+                            text-decoration: none;
+                            color: $font-secondary;
+                        }
+                        a.active {
+                            font-weight: 700;
+                            color: $beige-color;
+                        }
+                    }
+                    .nav-item:hover {
+                        font-weight: 500;
+                        a {
+                            color: $font-secondary-hover;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

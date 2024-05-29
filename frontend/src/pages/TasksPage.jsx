@@ -4,8 +4,10 @@ import { specific_tasks } from "../utils/Queries";
 import useCsrfToken from "../utils/UseCsrfToken";
 import UseGraphQL from "../utils/UseGraphQL";
 import { useState } from "react";
+import AddTask from "../components/AddTask";
 
 function TasksPage() {
+	const username_id = 1
 	const username = 'Naghun'
 	const csrfToken = useCsrfToken()
 	const query = specific_tasks
@@ -24,6 +26,9 @@ function TasksPage() {
         return <div>Loading...</div>
     }
 	
+	const open_add_task = () => {
+		console.log('opened')
+	}
 	return (
 		<div className="container tasks-page-starter">
 			<div className='row tasks-row'>
@@ -40,7 +45,7 @@ function TasksPage() {
                             ))}	
 						</ul>
 						<div className="col-12 tasks-create">
-							<button className="create-button btn col-4">Create New Task</button>
+							<button className="create-button btn col-4" onClick={open_add_task}>Create New Task</button>
 						</div>
 					</div>
 					{selectedTask && (
@@ -53,6 +58,7 @@ function TasksPage() {
 							}, 500); setIsOverlayed(false); setIsVisible(false)}}>Close Task</button>
 						</div>
 					)}
+					<AddTask />
 				</div>
 			</div>
 		</div>

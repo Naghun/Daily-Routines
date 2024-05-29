@@ -22,5 +22,24 @@ class Query(graphene.ObjectType):
             return Task.objects.filter(user=user)
         except User.DoesNotExist:
             return None
+
+class TaskMutation(graphene.Mutation):
+    class Arguments:
+        task_name = graphene.String(required=True)
+        description = graphene.String()
+        completed = graphene.Boolean()
+    task = graphene.Field(TasksType)
+
+    @classmethod
+    def mutate(cls, root, info, task_name, description=None, completed=False):
+        user = info.context.user
+        if user.is_anonymous:
+            raise Exception("Not logged in!")
+        task = Task(task_name=task_name, description=description, completed=completed, user=user)
+        task.save()
+        return TaskMutation(task=task)
     
-schema = graphene.Schema(query=Query)
+class Mutation(graphene.ObjectType):
+    update_task = TaskMutation.Field()
+
+schema = graphene.Schema(query=Query, mutation=Mutation)

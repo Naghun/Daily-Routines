@@ -52,6 +52,7 @@
                         .edit, .delete {
                             @include flex-end;
                             transition: 0.5s ease;
+                            cursor: pointer;
                         }
                         .edit:hover, .delete:hover {
                             color: $font-secondary-hover;

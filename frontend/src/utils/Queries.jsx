@@ -19,3 +19,15 @@ query SpecificTasks($username: String!) {
     }
 }
 `
+export const create_task = `
+mutation CreateTask($taskName: String!, $description: String, $completed: Boolean) {
+    updateTask(taskName: $taskName, description: $description, completed: $completed) {
+      task {
+        id
+        taskName
+        description
+        completed
+      }
+    }
+  }
+`
